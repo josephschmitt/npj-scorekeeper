@@ -18,9 +18,7 @@
       active() {
         return this.$store.state.route.name;
       },
-      ...mapState({
-        tabs: () => routes.filter((route) => route.isMainNav)
-      })
+      tabs: () => routes.filter((route) => route.isMainNav)
     }
   }
 </script>
