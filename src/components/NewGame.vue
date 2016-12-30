@@ -6,7 +6,7 @@
 
 <script>
   import NavigationBar from './NavigationBar.vue';
-  
+
   export default {
     components: {NavigationBar}
   }
