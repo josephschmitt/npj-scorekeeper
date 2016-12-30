@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 
 // import * as actions from './actions.js';
 // import * as getters from './getters.js';
@@ -16,5 +17,6 @@ export default new Vuex.Store({
     games,
     players
   },
+  plugins: [createPersistedState()],
   strict: true
 })
