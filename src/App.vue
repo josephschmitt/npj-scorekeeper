@@ -1,28 +1,38 @@
-<template>
+<template lang="html">
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <navigation-bar></navigation-bar>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+  import TabContent from './components/TabContent.vue';
+  import NavigationBar from './components/NavigationBar.vue';
+  import Tabs from './components/Tabs.vue';
 
-export default {
-  name: 'app',
-  components: {
-    Hello
+  export default {
+    name: 'app',
+    components: {
+      TabContent,
+      NavigationBar,
+      Tabs
+    }
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="css">
+  body, #app {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 </style>
