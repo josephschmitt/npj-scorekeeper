@@ -1,6 +1,7 @@
 <template lang="html">
   <div id="app">
     <navigation-bar></navigation-bar>
+    <tabs tabs=""></tabs>
   </div>
 </template>
 
