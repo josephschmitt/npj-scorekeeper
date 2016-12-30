@@ -1,19 +1,20 @@
 <template lang="html">
   <div id="app">
     <navigation-bar></navigation-bar>
+    <tab-panel></tab-panel>
     <tabs tabs=""></tabs>
   </div>
 </template>
 
 <script>
-  import TabContent from './components/TabContent.vue';
+  import TabPanel from './components/TabPanel.vue';
   import NavigationBar from './components/NavigationBar.vue';
   import Tabs from './components/Tabs.vue';
 
   export default {
     name: 'app',
     components: {
-      TabContent,
+      TabPanel,
       NavigationBar,
       Tabs
     }
