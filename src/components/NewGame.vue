@@ -3,8 +3,9 @@
     <navigation-bar></navigation-bar>
 
     <div class="topcoat-list">
+      <span class="topcoat-notification" v-if="hasErrors">{{errorMsg}}</span>
       <h3 class="topcoat-list__header">New Game</h3>
-      <input type="text" class="topcoat-text-input full" placeholder="Name" v-model="gameName">
+      <input type="text" class="topcoat-text-input full" placeholder="New Game Name" v-model="gameName">
 
       <template v-if="game.players.length">
         <h3 class="topcoat-list__header">Selected Players</h3>
@@ -39,6 +40,8 @@
     data() {
       return {
         gameName: '',
+        errorMsg: 'Name and at least one player required.',
+        hasErrors: false,
         game: {
           name: '',
           players: []
@@ -58,26 +61,39 @@
         });
       },
       addPlayer: function (player) {
+        this.hasErrors = false;
         this.$store.commit('addPlayer', {game: this.game, player});
       },
       removePlayer: function (player) {
         this.$store.commit('removePlayer', {game: this.game, player});
       },
       startGame: function () {
+
         if (this.game.name && this.game.players.length) {
           this.$store.commit('addGame', {game: this.game});
+        } else {
+          this.hasErrors = true;
         }
       }
     },
     watch: {
       gameName: function (val) {
         this.game.name = val;
+        this.hasErrors = false;
       }
     }
   }
 </script>
 
 <style lang="css">
+  .topcoat-notification {
+    position: absolute;
+    top: 4.375rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
   .topcoat-list__item {
     display: flex;
     flex-direction: row;

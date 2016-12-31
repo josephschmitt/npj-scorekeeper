@@ -2,7 +2,6 @@ export default {
   state: [],
   mutations: {
     addGame: function (state, {game}) {
-      console.log('addGame', state, game);
       state.push(game);
     },
     deleteGame: function (state, {game}) {
