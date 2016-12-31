@@ -34,4 +34,17 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .topcoat-list input[type="text"],
+  .topcoat-list input[type="search"],
+  .topcoat-list textarea {
+    margin: 0.5rem 0.75rem;
+  }
+
+  .topcoat-list input.full[type="text"],
+  .topcoat-list input.full[type="search"],
+  .topcoat-list textarea.full {
+    width: calc(100% - 0.75rem * 2);
+  }
+
 </style>
