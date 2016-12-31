@@ -32,4 +32,8 @@
     display: block;
     text-align: center;
   }
+
+  .topcoat-tab-bar__item input {
+    pointer-events: none;
+  }
 </style>
