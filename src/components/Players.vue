@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <navigation-bar></navigation-bar>
-    <input class="topcoat-search-input full" type="search" value="" placeholder="Filter players" v-model="search">
+    <input class="topcoat-search-input full" type="search" placeholder="Filter players" v-model="search">
     <ul class="topcoat-list topcoat-list__container">
       <li class="topcoat-list__item" v-for="player in players()">{{player.name}}</li>
     </ul>
