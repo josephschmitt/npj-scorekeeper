@@ -25,12 +25,33 @@
 
 <style lang="css" scoped>
   .topcoat-navigation-bar {
+    text-align: center;
     display: flex;
     flex-direction: row;
-    flex-shrink: 0;
+    align-items: center;
+  }
+
+  .topcoat-navigation-bar__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .topcoat-navigation-bar__item.center {
     flex-grow: 1;
+  }
+
+  .topcoat-navigation-bar__item.left,
+  .topcoat-navigation-bar__item.right {
+    position: absolute;
+  }
+
+  .topcoat-navigation-bar__item.left {
+    left: 1rem;
+  }
+
+  .topcoat-navigation-bar__item.right {
+    right: 1rem;
   }
 </style>
