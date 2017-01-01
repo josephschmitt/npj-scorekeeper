@@ -34,7 +34,7 @@
     computed: {
       player: function () {
         const routeId = this.$route.params.id;
-        const playerId = routeId !== 'new' ? routeId : null;
+        const playerId = routeId !== 'new' ? routeId.toString() : null;
 
         return this.allPlayers.find((player) => {
           return player.id.toString() === playerId;
