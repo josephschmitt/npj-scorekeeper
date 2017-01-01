@@ -8,7 +8,7 @@ function newId(state) {
 export default {
   state: [],
   mutations: {
-    addNewPlayer: function (state, {player}) {
+    addNewPlayer(state, {player}) {
       const newPlayer = Object.assign(player, {id: newId(state), dateAdded: new Date().getTime()});
       state.push(newPlayer);
     },
