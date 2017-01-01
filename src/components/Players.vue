@@ -52,10 +52,10 @@
         this.editMode = !this.editMode;
       },
       addNewPlayer: function () {
-        this.$router.push('/players/new/details');
+        this.$router.push({name: 'Player Details', params: {id: 'new'}});
       },
       editPlayer: function (player) {
-        this.editMode && this.$router.push(`/players/${player.id}/details`);
+        this.editMode && this.$router.push({name: 'Player Details', params: {id: player.id}});
       },
       deletePlayer: function (player) {
         this.$store.commit('deletePlayer', {player});
