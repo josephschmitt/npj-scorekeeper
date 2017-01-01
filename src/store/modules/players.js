@@ -1,7 +1,12 @@
 export default {
-  state: [
-    {id: 0, name: 'Nikki', dateAdded: ''},
-    {id: 1, name: 'Joe', dateAdded: ''},
-    {id: 2, name: 'Valarie', dateAdded: ''}
-  ]
+  state: [],
+  mutations: {
+    addNewPlayer: function (state, {player}) {
+      state.push(player);
+    },
+    deletePlayer: function (state, {player}) {
+      const index = state.indexOf(player);
+      state.splice(index, 1);
+    }
+  }
 };

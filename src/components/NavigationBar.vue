@@ -47,6 +47,7 @@
   .topcoat-navigation-bar__item.left,
   .topcoat-navigation-bar__item.right {
     position: absolute;
+    z-index: 1;
   }
 
   .topcoat-navigation-bar__item.left {

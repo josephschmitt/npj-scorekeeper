@@ -5,7 +5,7 @@
     <div class="topcoat-list">
       <span class="topcoat-notification" v-if="hasErrors">{{errorMsg}}</span>
       <h3 class="topcoat-list__header">New Game</h3>
-      <input type="text" class="topcoat-text-input full" placeholder="New Game Name" v-model="gameName">
+      <input type="text" class="topcoat-text-input full" placeholder="Name" v-model="gameName">
 
       <template v-if="game.players.length">
         <h3 class="topcoat-list__header">Selected Players</h3>
