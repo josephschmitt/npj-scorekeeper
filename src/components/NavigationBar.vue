@@ -25,6 +25,8 @@
 
 <style lang="css" scoped>
   .topcoat-navigation-bar {
+    position: sticky;
+    top: 0;
     text-align: center;
     display: flex;
     flex-direction: row;
