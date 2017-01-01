@@ -47,7 +47,7 @@
         this.editMode = !this.editMode;
       },
       addNewPlayer: function () {
-
+        this.$router.push('/players/new/details');
       },
       deletePlayer: function (player) {
         this.$store.commit('deletePlayer', {player});
