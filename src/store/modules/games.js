@@ -8,10 +8,10 @@ export default {
       const index = state.indexOf(game);
       state.splice(index, 1);
     },
-    addPlayer: function (state, {game, player}) {
+    addGamePlayer: function (state, {game, player}) {
       game.players.push(player);
     },
-    removePlayer: function (state, {game, player}) {
+    removeGamePlayer: function (state, {game, player}) {
       const players = game.players;
       const index = players.indexOf(player);
       players.splice(index, 1);

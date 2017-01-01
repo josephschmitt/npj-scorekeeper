@@ -62,10 +62,10 @@
       },
       addPlayer: function (player) {
         this.hasErrors = false;
-        this.$store.commit('addPlayer', {game: this.game, player});
+        this.$store.commit('addGamePlayer', {game: this.game, player});
       },
       removePlayer: function (player) {
-        this.$store.commit('removePlayer', {game: this.game, player});
+        this.$store.commit('removeGamePlayer', {game: this.game, player});
       },
       startGame: function () {
 
