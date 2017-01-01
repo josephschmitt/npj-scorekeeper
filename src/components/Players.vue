@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <navigation-bar>
-      <button class="topcoat-button--cta" slot="navigation-bar-button-left" @click="editPlayers">
+      <button class="topcoat-button--cta" slot="navigation-bar-button-left" @click="toggleEditMode">
         <span v-if="!editMode">Edit</span>
         <span v-else="">Done</span>
       </button>
@@ -12,9 +12,14 @@
     <input class="player-search-field topcoat-search-input full" type="search" placeholder="Filter players"
         v-model="search">
     <ul class="topcoat-list topcoat-list__container">
-      <li class="player-list__item topcoat-list__item" v-for="player in players()">
+      <li class="player-list__item topcoat-list__item" v-for="player in players()"
+          @click="editPlayer(player)">
         <span>{{player.name}}</span>
-        <button class="topcoat-button" v-if="editMode" @click="deletePlayer(player)">Delete</button>
+
+        <template v-if="editMode">
+          <button class="topcoat-button" @click.stop="editPlayer(player)">Edit</button>
+          <button class="topcoat-button" @click.stop="deletePlayer(player)">Delete</button>
+        </template>
       </li>
     </ul>
   </div>
@@ -43,11 +48,14 @@
           return player.name.toLowerCase().includes(this.search.toLowerCase());
         });
       },
-      editPlayers: function () {
+      toggleEditMode: function () {
         this.editMode = !this.editMode;
       },
       addNewPlayer: function () {
         this.$router.push('/players/new/details');
+      },
+      editPlayer: function (player) {
+        this.editMode && this.$router.push(`/players/${player.id}/details`);
       },
       deletePlayer: function (player) {
         this.$store.commit('deletePlayer', {player});
@@ -67,7 +75,8 @@
     flex-direction: row;
   }
 
-  .player-list__item .topcoat-button {
+  .player-list__item .topcoat-button:first-of-type {
     margin-left: auto;
+    margin-right: 0.5rem;
   }
 </style>
