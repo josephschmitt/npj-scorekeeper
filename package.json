@@ -15,10 +15,10 @@
   "dependencies": {
     "css-element-queries": "^0.4.0",
     "framework7": "^1.5.2",
-    "framework7-vue": "^0.7.0",
+    "framework7-vue": "^0.7.2",
     "reset-css": "^2.2.0",
     "topcoat": "^0.7.5",
-    "vue": "^2.1.0",
+    "vue": "^2.1.8",
     "vue-router": "^2.1.1",
     "vuex": "^2.1.1",
     "vuex-persistedstate": "^1.1.0",
