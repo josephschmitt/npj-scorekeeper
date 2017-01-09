@@ -1,6 +1,5 @@
 <template lang="html">
   <div>
-    <navigation-bar></navigation-bar>
     <ul class="topcoat-list topcoat-list__container">
       <input type="text" class="topcoat-text-input full" placeholder="Player Name" v-model="name">
     </ul>
@@ -14,8 +13,6 @@
 <script>
   import {mapState} from 'vuex';
 
-  import NavigationBar from './NavigationBar.vue';
-
   function updateName() {
     this.name = '';
 
@@ -25,7 +22,6 @@
   }
 
   export default {
-    components: {NavigationBar},
     data() {
       return {
         name: ''

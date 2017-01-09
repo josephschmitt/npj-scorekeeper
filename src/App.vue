@@ -1,50 +1,62 @@
 <template lang="html">
   <div id="app">
-    <tab-panel></tab-panel>
-    <tabs tabs=""></tabs>
+    <f7-statusbar></f7-statusbar>
+    <f7-views navbar-through :dynamicNavbar="true" tabs>
+      <f7-popup id="popup-new-game" @popup:opened="onPopupOpen" @popup:closed="onPopupClosed">
+        <f7-pages>
+          <NewGame :popup-events="popupEvents"></NewGame>
+        </f7-pages>
+      </f7-popup>
+      <f7-view id="tabpanel-games" url="/games" tab active>
+        <f7-pages>
+          <Games></Games>
+        </f7-pages>
+      </f7-view>
+      <f7-view id="tabpanel-players" url="/players" tab>
+        <f7-pages>
+          <Players></Players>
+        </f7-pages>
+      </f7-view>
+      <Tabs></Tabs>
+    </f7-views>
   </div>
 </template>
 
 <script>
-  import TabPanel from './components/TabPanel.vue';
+  import Vue from 'vue';
   import Tabs from './components/Tabs.vue';
+  import Games from './pages/Games.vue';
+  import Players from './pages/Players.vue';
+  import NewGame from './pages/NewGame.vue';
+
+  const popupEvents = new Vue();
 
   export default {
     name: 'app',
     components: {
-      TabPanel,
-      Tabs
+      Tabs,
+      Games,
+      Players,
+      NewGame
+    },
+    data() {
+      return {
+        popupEvents
+      };
+    },
+    methods: {
+      onPopupOpen() {
+        popupEvents.$emit('popup:open');
+      },
+      onPopupClosed() {
+        popupEvents.$emit('popup:closed');
+      }
     }
   }
 </script>
 
 <style lang="css">
-  body, #app {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+  .list-block:first-child {
+    margin-top: 0;
   }
-
-  body {
-    height: 100vh;
-  }
-
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .topcoat-list input[type="text"],
-  .topcoat-list input[type="search"],
-  .topcoat-list textarea {
-    margin: 0.5rem 0.75rem;
-  }
-
-  .topcoat-list input.full[type="text"],
-  .topcoat-list input.full[type="search"],
-  .topcoat-list textarea.full {
-    width: calc(100% - 0.75rem * 2);
-  }
-
 </style>
