@@ -1,10 +1,5 @@
 <template lang="html">
   <f7-page name="games">
-    <f7-navbar sliding>
-      <f7-nav-left></f7-nav-left>
-      <f7-nav-center sliding>Games</f7-nav-center>
-      <f7-nav-right></f7-nav-right>
-    </f7-navbar>
     <f7-list>
       <f7-list-item v-for="game in games" :title="game.name" link=true swipeout
           @swipeout:deleted="deleteGame(game)">

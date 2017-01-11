@@ -8,6 +8,9 @@
         </f7-pages>
       </f7-popup>
       <f7-view id="tabpanel-games" url="/games" tab active>
+        <f7-navbar sliding>
+          <f7-nav-center sliding>Games</f7-nav-center>
+        </f7-navbar>
         <f7-pages>
           <Games></Games>
         </f7-pages>

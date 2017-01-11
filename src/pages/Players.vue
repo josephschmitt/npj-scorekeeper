@@ -1,11 +1,5 @@
 <template lang="html">
   <f7-page name="players">
-    <f7-navbar sliding>
-      <f7-nav-center sliding>Players</f7-nav-center>
-      <f7-nav-right>
-        <f7-link icon-f7="add" open-panel="right"></f7-link>
-      </f7-nav-right>
-    </f7-navbar>
     <f7-searchbar
         cancel-link="Cancel"
         search-list="#players-list"
